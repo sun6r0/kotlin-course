@@ -96,4 +96,130 @@ fun main() {
     }
 
     findSubstringInArray(a10, stringToFind)
+
+
+//Работа со списками List
+
+// 1 Создайте пустой неизменяемый список целых чисел.
+    val emptyList: List<Int> = emptyList()
+
+    // 2 Создайте неизменяемый список строк, содержащий три элемента
+    val stringList = listOf("Hello", "World", "Kotlin")
+
+    // 3 Создайте изменяемый список целых чисел и инициализируйте его значениями от 1 до 5
+    val mutableIntList = mutableListOf(1, 2, 3, 4, 5)
+
+    // 4 Имея изменяемый список целых чисел, добавьте в него новые элементы
+    val mutableIntList4 = mutableListOf(1, 2, 3, 4, 5)
+    mutableIntList4.add(6)
+    mutableIntList4.add(7)
+    mutableIntList4.add(8)
+    println("После добавления элементов: $mutableIntList4")
+
+    // 5 Имея изменяемый список строк, удалите из него определенный элемент
+    val mutableStringList = mutableListOf("Hello", "World", "Kotlin")
+    mutableStringList.remove("World")
+    println("После удаления 'World': $mutableStringList")
+
+    // 6 Создайте список целых чисел и используйте цикл для вывода каждого элемента на экран
+    val numbers = listOf(10, 20, 30, 40, 50)
+    for (number in numbers) {
+        println("$number ")
+    }
+
+    // 7 Создайте список строк и получите из него второй элемент, используя его индекс
+    val l7 = listOf("avav", "asas", "awawa", "aqqqaqa")
+    val secondElement = l7[1]
+
+    // 8 Имея изменяемый список чисел, измените значение элемента на определенной позиции
+    val mutableNumbers = mutableListOf(1, 2, 3, 4, 5)
+    mutableNumbers[2] = 100
+    println("После изменения элемента с индексом 2: $mutableNumbers")
+
+    // 9 Создайте два списка строк и объедините их в один новый список с помощью циклов
+    val list1 = listOf("Apple", "Banana")
+    val list2 = listOf("Orange", "Grape")
+    val combinedList = mutableListOf<String>()
+
+    for (item in list1) {
+        combinedList.add(item)
+    }
+
+    for (item in list2) {
+        combinedList.add(item)
+    }
+    println("Объединенный список: $combinedList")
+
+    // 10 Создайте список целых чисел и найдите в нем минимальный и максимальный элементы используя цикл
+    val numbersList = listOf(34, 12, 89, 5, 67, 23)
+    var min = numbersList[0]
+    var max = numbersList[0]
+
+    for (number in numbersList) {
+        if (number < min) min = number
+        if (number > max) max = number
+    }
+    println("Минимальный: $min, Максимальный: $max")
+
+    // 11 Имея список целых чисел, создайте новый список, содержащий только четные числа из исходного списка
+    val originalList = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    val evenNumbers = mutableListOf<Int>()
+
+    for (number in originalList) {
+        if (number % 2 == 0) {
+            evenNumbers.add(number)
+        }
+    }
+    println("Четные числа: $evenNumbers")
+
+    //Работа с множествами
+
+    // 1 Создайте пустое неизменяемое множество целых чисел
+    val emptySet: Set<Int> = emptySet()
+
+    // 2 Создайте неизменяемое множество целых чисел, содержащее три различных элемента
+    val numberSet = setOf(1, 2, 3)
+
+    // 3 Создайте изменяемое множество строк и инициализируйте его несколькими значениями
+    val mutableStringSet = mutableSetOf("Kotlin", "Java", "Scala")
+
+    // 4 Имея изменяемое множество строк, добавьте в него новые элементы
+    mutableStringSet.add("Swift")
+    mutableStringSet.add("Go")
+    println("После добавления элементов: $mutableStringSet")
+
+    // 5 Имея изменяемое множество целых чисел, удалите из него определенный элемент
+    val mutableNumberSet = mutableSetOf(1, 2, 3, 4, 5)
+    mutableNumberSet.remove(2)
+    println("После удаления элемента 2: $mutableNumberSet")
+
+    // 6 Создайте множество целых чисел и используйте цикл для вывода каждого элемента на экран
+    val integerSet = setOf(10, 20, 30, 40, 50)
+    for (number in integerSet) {
+        print("$number ")
+    }
+    println()
+
+    // 7 Функция, которая проверяет, есть ли в множестве указанная строка
+    val programmingLanguages = setOf("Kotlin", "Java", "Python", "JavaScript")
+
+    fun containsElement(set: Set<String>, element: String): Boolean {
+        for (item in set) {
+            if (item == element) {
+                return true
+            }
+        }
+        return false
+    }
+
+    println("'Kotlin' в множестве: ${containsElement(programmingLanguages, "Kotlin")}")
+    println("'C++' в множестве: ${containsElement(programmingLanguages, "C++")}")
+
+    // 8 Создайте множество строк и конвертируйте его в изменяемый список строк с использованием цикла
+    val stringSetS8 = setOf("Apple", "Banana", "Orange", "Apple") // Дубликаты будут удалены
+    val stringListS8 = mutableListOf<String>()
+
+    for (item in stringSetS8) {
+        stringListS8.add(item)
+    }
 }
