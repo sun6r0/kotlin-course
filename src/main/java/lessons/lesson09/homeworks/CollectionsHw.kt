@@ -27,7 +27,9 @@ fun main() {
     for (index in a4.indices) {
         a4[index] = 3 * index
         println(a4[index])
+
     }
+    println(a4.joinToString { " " })
 
 //    5 Создайте массив из 3 nullable строк. Инициализируйте его одним null значением и двумя строками.
     val a5: Array<String?> = arrayOf(null, "Hello", "World")
