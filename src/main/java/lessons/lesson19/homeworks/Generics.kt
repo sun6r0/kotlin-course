@@ -1,4 +1,4 @@
-package lessons.lesson19
+package lessons.lesson19.homeworks
 
 // 1
 fun <M> getMiddleElement(list: List<M>): M? {
